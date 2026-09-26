@@ -17,7 +17,7 @@
 //! `onemfive_core::protocol::TorProtocolService`).
 //!
 //! ```no_run
-//! use tor_client::TorClient;
+//! use tor::TorClient;
 //! use std::collections::HashMap;
 //!
 //! let client = TorClient::from_config(&HashMap::new());
@@ -25,7 +25,7 @@
 //!     let mut env = seda_bus_envelope();  // env.headers["url"] = "http://<onion>/"
 //!     client.send(&mut env);
 //! }
-//! # fn seda_bus_envelope() -> tor_client::Envelope { unimplemented!() }
+//! # fn seda_bus_envelope() -> tor::Envelope { unimplemented!() }
 //! ```
 
 mod detector;

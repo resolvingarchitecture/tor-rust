@@ -71,6 +71,6 @@ decision, not applying one:
 - [ ] Keep `Status` and config keys aligned with `tor-client-java` 1.2.x and the
       `onemfive_core::protocol::TorProtocolService` adapter.
 - [ ] `1m5-core-rust`: add a `tor-embedded` feature forwarding
-      `tor_client/embedded` (mirrors the existing `i2p-embedded`).
+      `tor/embedded` (mirrors the existing `i2p-embedded`).
 - [ ] `1m505`: confirm `arti-client` builds for `x86_64-unknown-redox`
       (tokio + rustls/ring); assess Arti bridge support.

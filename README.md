@@ -57,7 +57,7 @@ Then `systemctl start tor` (or `tor -f ~/.torrc`). Check:
 
 ```rust
 use std::collections::HashMap;
-use tor_client::{Status, TorClient};
+use tor::{Status, TorClient};
 
 let client = TorClient::from_config(&HashMap::new());   // auto mode
 if client.start() {                       // false (cleanly) if Tor is unavailable

@@ -4,7 +4,7 @@ use std::net::TcpListener;
 use std::thread;
 use std::time::Duration;
 
-use tor_client::{LocalTorDetector, Status, TorClient};
+use tor::{LocalTorDetector, Status, TorClient};
 
 #[test]
 fn detector_reports_nothing_when_ports_closed() {
@@ -64,7 +64,7 @@ fn local_mode_without_a_daemon_is_disconnected() {
     cfg.insert("ra.tor.socksPort".into(), "9098".into());
     cfg.insert("ra.tor.controlPort".into(), "9099".into());
     let client = TorClient::from_config(&cfg);
-    assert_eq!(client.mode(), tor_client::Mode::Local);
+    assert_eq!(client.mode(), tor::Mode::Local);
     assert!(!client.start());
     assert_eq!(client.status(), Status::Disconnected);
 }

@@ -8,7 +8,7 @@ where no system Tor exists.
 
 ## Where it sits
 
-    1m5-core-rust  ──wraps──►  tor_client::TorClient
+    1m5-core-rust  ──wraps──►  tor::TorClient
       onemfive_core::protocol::TorProtocolService (impl Service + Transport)
                                      │
                     ┌────────────────┴─────────────────┐

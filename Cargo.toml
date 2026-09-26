@@ -1,12 +1,12 @@
 [package]
-name = "tor_client"
+name = "tor"
 version = "0.2.0"
 authors = ["Brian Taylor <brian@resolvingarchitecture.io>"]
 license = "MIT"
 edition = "2021"
 description = "A Tor client for 1M5: a local Tor daemon (SOCKS) or embedded Arti, selected by ra.tor.mode"
 homepage = "https://resolvingarchitecture.io"
-repository = "https://github.com/resolvingarchitecture/tor-client-rust"
+repository = "https://github.com/resolvingarchitecture/tor-rust"
 readme = "README.md"
 keywords = ["tor", "socks", "privacy", "onion"]
 categories = ["network-programming"]
