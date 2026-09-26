@@ -22,6 +22,18 @@ where no system Tor exists.
 routing-slip hop carrying the destination URL; the adapter calls
 `TorClient::send`, which dispatches to whichever backend is active.
 
+## Divergence from tor-client-java (2026-09-26, unresolved)
+
+`tor-client-java` retired its `local` (system-daemon) path entirely: it now
+only ever runs a Tor process it downloaded, verified, and spawned itself, on
+the reasoning that depending on some other already-running Tor instance
+should never be a default, let alone the preferred one. This port's `auto`
+default still does the opposite - see "Modes" below and README.md's "Which
+mode?" for the (reasoned, not accidental) case for preferring a host-managed
+Tor when one exists. That reasoning predates this divergence and hasn't been
+revisited against it. See `TODO.md` P0.5 - this needs an explicit decision,
+not a silent fix in either direction.
+
 ## Modes (`ra.tor.mode`)
 
 `Mode { Local, Embedded, Auto }`, mirroring `i2p-rust`'s `Mode`.

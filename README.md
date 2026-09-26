@@ -17,6 +17,16 @@ used as the Tor **protocol service** for
 The `local` / `embedded` / `auto` split mirrors
 [`i2p-rust`](https://github.com/resolvingarchitecture/i2p-rust)'s `ra.i2p.mode`.
 
+**Note a real divergence from `tor-client-java` as of 2026-09-26:** that port
+no longer has a `local` mode at all - it never attaches to a pre-existing Tor
+instance, only the one it downloads, verifies, and spawns itself (see its
+README.md "Trust model"). This port's `auto` default still *prefers* `local`
+when a daemon is reachable and will switch back to it at runtime if one
+reappears while running on `embedded` (see "Which mode?" below for the
+original reasoning). That was a deliberate, reasoned design choice before this
+divergence existed; it hasn't been changed here, and shouldn't be without a
+decision from whoever owns this port - see `TODO.md` P0.5.
+
 ## Which mode?
 
 - A host that runs and maintains its own Tor (Tor Browser, a system `tor`
